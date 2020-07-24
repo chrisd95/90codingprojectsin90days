@@ -15,6 +15,9 @@ app.get('/', (req, res) =>{
   res.render('pages/index')
 });
 
+app.get('/day2', (req, res) =>{
+  res.render('pages/day2/day2')
+});
 app.get('/api/courses', (req,res) =>{
   res.send([1,2,3]);
 });
