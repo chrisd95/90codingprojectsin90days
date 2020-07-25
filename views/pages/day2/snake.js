@@ -3,6 +3,7 @@ var cnv;
 var grid =[];
 //Initialize the grid 20x20 with values of 0 (empty spaces)
 //Eventually, introducing a hashmap to store the values would will reduce the time complexity
+
 for(var i=0; i<20; i++){
   grid.push([])
   for(var j=0;j<20;j++){
@@ -22,9 +23,16 @@ function centerCanvas() {
 }
 
 function setup() {
-  cnv = createCanvas(windowHeight*0.8,windowHeight*0.8);
+  cnv = createCanvas(windowHeight*0.75,windowHeight*0.75);
   centerCanvas();
   background(255, 0, 200);
+  // document.body registers gestures anywhere on the page
+  var hammer = new Hammer(document.body, options);
+  hammer.get('swipe').set({
+    direction: Hammer.DIRECTION_ALL
+  });
+
+  hammer.on("swipe", swiped);
 }
 
 //Function that scans the current state of the grid for empty spots and returns it (Empty:0, Food:1, Snake:2)
@@ -65,7 +73,7 @@ function initialConditions(){
   initialSnakePosition = Math.floor(Math.random() * emptyArr.length);
   var snakeHead = emptyArr[initialSnakePosition];
   //snake length = 3
-  var snakeLength = 3;
+  var snakeLength = 5;
 
   //append the snake body to the snake head (this might be reversed actually)
   for(var s=0; s<snakeLength;s++){
@@ -118,7 +126,7 @@ function draw(){
   //clear the old drawing, every cycle rewrites from scratch
   clear();
   centerCanvas();
-  gridSize = windowHeight*0.8;
+  gridSize = windowHeight*0.75;
   unitSize = gridSize/20
   fill(255,255,255);
   populateGridSnake(snake,grid);
@@ -156,15 +164,67 @@ function draw(){
 
 function keyPressed() {
     if(keyCode === UP_ARROW){
-      snakeDirection = "up";
+      if(snakeDirection === "down"){
+        snakeDirection = "down";
+      }else{
+        snakeDirection = "up";
+      }
     }
     if(keyCode === DOWN_ARROW){
-      snakeDirection = "down";
+      if(snakeDirection === "up"){
+        snakeDirection = "up";
+      }else{
+        snakeDirection = "down";
+      }
     }
     if(keyCode === LEFT_ARROW){
-      snakeDirection = "left";
+      if(snakeDirection === "right"){
+        snakeDirection = "right";
+      }else{
+        snakeDirection = "left";
+      }
     }
     if(keyCode === RIGHT_ARROW){
+      if(snakeDirection === "left"){
+        snakeDirection = "left";
+      }else{
+        snakeDirection = "right";
+      }
+    }
+}
+
+var msg = "swipe";
+
+  // set options to prevent default behaviors for swipe, pinch, etc
+  var options = {
+    preventDefault: true
+  };
+
+function swiped(event) {
+  console.log(event);
+  if (event.direction == 4) {
+    if(snakeDirection === "left"){
+      snakeDirection = "left";
+    }else{
       snakeDirection = "right";
     }
+  } else if (event.direction == 8) {
+    if(snakeDirection === "down"){
+      snakeDirection = "down";
+    }else{
+      snakeDirection = "up";
+    }
+  } else if (event.direction == 16) {
+    if(snakeDirection === "up"){
+      snakeDirection = "up";
+    }else{
+      snakeDirection = "down";
+    }
+  } else if (event.direction == 2) {
+    if(snakeDirection === "right"){
+      snakeDirection = "right";
+    }else{
+      snakeDirection = "left";
+    }
+  }
 }

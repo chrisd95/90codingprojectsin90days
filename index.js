@@ -26,6 +26,10 @@ app.get('/p5.sound.js',(req, res) =>{
     res.sendfile('node_modules/p5/lib/addons/p5.sound.js');
 });
 
+app.get('/hammer.js',(req, res) =>{
+    res.sendfile('node_modules/hammerjs/hammer.js');
+});
+
 app.get('/snake.js',(req, res) =>{
     res.sendfile('views/pages/day2/snake.js');
 });
