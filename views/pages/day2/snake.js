@@ -25,6 +25,7 @@ function centerCanvas() {
 function setup() {
   cnv = createCanvas(windowHeight*0.75,windowHeight*0.75);
   centerCanvas();
+  frameRate(24); // Attempt to refresh at starting FPS
   background(255, 0, 200);
   // document.body registers gestures anywhere on the page
   var hammer = new Hammer(document.body, options);
@@ -132,12 +133,6 @@ function draw(){
   populateGridSnake(snake,grid);
   for(var i=0; i<grid.length; i++){
     for(var j=0;j<grid[0].length;j++){
-      /*
-      textSize(10);
-      fill(0,0,0);
-      text(i+",",i*unitSize,j*unitSize-4);
-      text(j,i*unitSize+10,j*unitSize-4);
-      */
       fill(255,255,255);
       if(grid[i][j] === 0){
       //square(unitSize*i,unitSize*j,unitSize);
@@ -201,7 +196,6 @@ var msg = "swipe";
   };
 
 function swiped(event) {
-  console.log(event);
   if (event.direction == 4) {
     if(snakeDirection === "left"){
       snakeDirection = "left";
