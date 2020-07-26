@@ -1,8 +1,18 @@
+class HashTable{
+  setItem = (key, value) =>{
+
+  }
+  getItem = (key) =>{
+    return ''
+  }
+}
+
+const myTable = new HashTable()
+
+
 //Initialize variables
 var cnv;
 var grid =[];
-p5.disableFriendlyErrors = true; // disables FES
-
 //Initialize the grid 20x20 with values of 0 (empty spaces)
 //Eventually, introducing a hashmap to store the values would will reduce the time complexity
 for(var i=0; i<20; i++){
@@ -25,7 +35,7 @@ function centerCanvas() {
 function setup() {
   cnv = createCanvas(windowHeight*0.75,windowHeight*0.75);
   //centerCanvas();
-  frameRate(10); // Attempt to refresh at starting FPS
+  frameRate(24); // Attempt to refresh at starting FPS
   background(255, 0, 200);
   // document.body registers gestures anywhere on the page
   var hammer = new Hammer(document.body, options);
