@@ -3,7 +3,6 @@ var cnv;
 var grid =[];
 //Initialize the grid 20x20 with values of 0 (empty spaces)
 //Eventually, introducing a hashmap to store the values would will reduce the time complexity
-
 for(var i=0; i<20; i++){
   grid.push([])
   for(var j=0;j<20;j++){
@@ -18,13 +17,12 @@ function centerCanvas() {
   if(y < 100){
     y = 150;
   }
-
   cnv.position(x, y);
 }
 
 function setup() {
   cnv = createCanvas(windowHeight*0.75,windowHeight*0.75);
-  centerCanvas();
+  //centerCanvas();
   frameRate(24); // Attempt to refresh at starting FPS
   background(255, 0, 200);
   // document.body registers gestures anywhere on the page

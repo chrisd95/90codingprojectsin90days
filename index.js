@@ -18,16 +18,16 @@ app.get('/day2', (req, res) =>{
   res.render('pages/day2/day2')
 });
 
-app.get('/p5.js',(req, res) =>{
-    res.sendfile('node_modules/p5/lib/p5.js');
+app.get('/p5.min.js',(req, res) =>{
+    res.sendfile('node_modules/p5/lib/p5.min.js');
 });
 
 app.get('/p5.sound.js',(req, res) =>{
     res.sendfile('node_modules/p5/lib/addons/p5.sound.js');
 });
 
-app.get('/hammer.js',(req, res) =>{
-    res.sendfile('node_modules/hammerjs/hammer.js');
+app.get('/hammer.min.js',(req, res) =>{
+    res.sendfile('node_modules/hammerjs/hammer.min.js');
 });
 
 app.get('/snake.js',(req, res) =>{
