@@ -18,6 +18,14 @@ app.get('/day2', (req, res) =>{
   res.render('pages/day2/day2')
 });
 
+app.get('/day3', (req, res) =>{
+  res.render('pages/day3/day3')
+});
+
+app.get('/weather.js',(req, res) =>{
+    res.sendfile('views/pages/day3/weather.js');
+});
+
 app.get('/p5.min.js',(req, res) =>{
     res.sendfile('node_modules/p5/lib/p5.min.js');
 });
@@ -37,6 +45,8 @@ app.get('/snake.js',(req, res) =>{
 app.get('/api/courses', (req,res) =>{
   res.send([1,2,3]);
 });
+
+
 
 
 // PORT

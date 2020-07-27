@@ -32,7 +32,6 @@ function setup() {
   hammer.get('swipe').set({
     direction: Hammer.DIRECTION_ALL
   });
-
   hammer.on("swipe", swiped);
 }
 
