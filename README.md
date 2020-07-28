@@ -1,32 +1,10 @@
-# node-js-getting-started
+90 Day coding project
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+Each day consists of a project which is uploaded to a heroku node.js server
 
-This application supports the [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+Link: https://www.christopherdip.com
 
-## Running Locally
-
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
-
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku master
-$ heroku open
-```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+I used p5.js and APIs such as googlemaps API, openweathermap API
 
 ## Documentation
 
