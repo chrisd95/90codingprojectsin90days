@@ -22,6 +22,10 @@ app.get('/day3', (req, res) =>{
   res.render('pages/day3/day3')
 });
 
+app.get('/day4', (req, res) =>{
+  res.render('pages/day4/day4')
+});
+
 app.get('/weather.js',(req, res) =>{
     res.sendfile('views/pages/day3/weather.js');
 });

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCb2dZrO85t835IGU4In82dScUxQPEy8Lk&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      "use strict";
+
+      let map;
+
+      function initMap() {
+        // The location of Uluru
+        var mcMaster = {lat:45.549184, lng:-73.226193};
+        var sasmontreal = {lat:45.516505, lng:-73.610542};
+        var eim = {lat:45.486736, lng:-73.595676};
+        var eil = {lat:45.535234, lng:-73.777658};
+        var eilt = {lat:45.448372, lng:-73.47732};
+        var royalwest = {lat:45.450484, lng:-73.643253};
+        var traversee = {lat:45.419676, lng:-73.636347};
+        var vincentmassey = {lat:45.563975, lng:-73.571399};
+        var roberval = {lat:45.549546, lng:-73.622704};
+        var albertmorisette = {lat:46.05967, lng:-71.961644};
+        var cardinalroy = {lat:46.393024, lng:-72.565237};
+
+        var brebeuf = {lat:45.501046, lng:-73.623114};
+        var jeaneudes = {lat:45.556099, lng:-73579852};
+        var jeandelamennais = {lat:45.413563, lng:-73.482834};
+        var saintnomdemarie = {lat:45.511869, lng:-73.61263};
+        var saintjosephhull = {lat:45.431395, lng:-75.710653};
+        var saintsacrement = {lat:45.694983, lng:-73.638568};
+        var aliibnabitalib = {lat:45.528861, lng:-73.652718};
+        var collegelaval = {lat:45.616049, lng:-73.648188};
+        var collegegatineau = {lat:45.493757, lng:-75.750475};
+        var collegesaintemarcelline = {lat:45.516506, lng:-73.74676};
+        var regina = {lat: 45.565201, lng: -73.649904};
+
+        var image = {url:'https://i.ibb.co/tx1VM34/noun-Mortar-Board-669639.png',
+                    scaledSize: new google.maps.Size(30, 30)
+                    // The origin for this image is (0, 0).
+                    //origin: new google.maps.Point(10, 10)
+                    // The anchor for this image is the base of the flagpole at (0, 32).
+                    //anchor: new google.maps.Point(0, -0)
+                  };
+
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 8,
+              center:{
+                lat: 45.5,
+                lng: -73.6
+
+            }}
+            );
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: regina, map: map, title:"Régina-Assumpta",
+        icon:image});
+        var marker1 = new google.maps.Marker({position: mcMaster, map: map,icon:image});
+        var marker2 = new google.maps.Marker({position: sasmontreal, map: map,icon:image});
+        var marker3 = new google.maps.Marker({position: eim, map: map,icon:image});
+        var marker4 = new google.maps.Marker({position: eil, map: map,icon:image});
+        var marker5 = new google.maps.Marker({position: eilt, map: map,icon:image});
+        var marker6 = new google.maps.Marker({position: royalwest, map: map,icon:image});
+        var marker7 = new google.maps.Marker({position: traversee, map: map,icon:image});
+        var marker8 = new google.maps.Marker({position: vincentmassey, map: map,icon:image});
+        var marker9 = new google.maps.Marker({position: roberval, map: map,icon:image});
+        var marker10 = new google.maps.Marker({position: albertmorisette, map: map,icon:image});
+        var marker11= new google.maps.Marker({position: cardinalroy, map: map,icon:image});
+        var marker12= new google.maps.Marker({position: brebeuf, map: map,icon:image});
+        var marker13= new google.maps.Marker({position: jeaneudes, map: map,icon:image});
+        var marker14= new google.maps.Marker({position: jeandelamennais, map: map,icon:image});
+        var marker15= new google.maps.Marker({position: saintnomdemarie, map: map,icon:image});
+        var marker16= new google.maps.Marker({position: saintjosephhull, map: map,icon:image});
+        var marker17= new google.maps.Marker({position: saintsacrement, map: map,icon:image});
+        var marker18= new google.maps.Marker({position: aliibnabitalib, map: map,icon:image});
+        var marker19= new google.maps.Marker({position: collegelaval, map: map,icon:image});
+        var marker20= new google.maps.Marker({position: collegegatineau, map: map,icon:image});
+        var marker21= new google.maps.Marker({position: collegesaintemarcelline, map: map,icon:image});
+
+
+
+        var contentString = '<div id="content">'+
+              '<div id="siteNotice">'+
+              '</div>'+
+              '<h3 id="firstHeading" class="firstHeading">RANK 11</h3>'+
+              '<div id="bodyContent">'+
+              '<p><b>Collège Regina Assumpta</b></p>'+
+              '<p>COTE: </p>'+
+              '</div>'+
+              '</div>';
+          var contentString1 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 1</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>École internationale de McMaster</b></p>'+
+                'COTE: 10,0</p>'+
+                '</div>'+
+                '</div>';
+          var contentString2 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 2</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>École du SAS</b></p>'+
+                '<p>COTE: 9.8</p>'+
+                '</div>'+
+                '</div>';
+          var contentString3 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 3</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>École internationale de Montréal</b></p>'+
+                '<p>COTE: 9.7</p>'+
+                '</div>'+
+                '</div>';
+          var contentString4 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 4</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>École d\'éducation internationale de Laval</b></p>'+
+                '<p>COTE: 9.4</p>'+
+                '</div>'+
+                '</div>';
+          var contentString5 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 5</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>École internationale Lucille-Teasdale</b></p>'+
+                '<p>COTE: 8.6</p>'+
+                '</div>'+
+                '</div>';
+          var contentString6 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 6</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Académie Royal West</b></p>'+
+                '<p>COTE: 9.1</p>'+
+                '</div>'+
+                '</div>';
+          var contentString7 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 7</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>École de la Traversée</b></p>'+
+                '<p>COTE: 8.6</p>'+
+                '</div>'+
+                '</div>';
+          var contentString8 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 8</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Vincent Massey</b></p>'+
+                '<p>COTE: 8.3</p>'+
+                '</div>'+
+                '</div>';
+          var contentString9 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 9</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Académie de Roberval</b></p>'+
+                '<p>COTE: 8.3</p>'+
+                '</div>'+
+                '</div>';
+          var contentString10 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 10</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>École secondaire Le Tandem Albert-Morissette</b></p>'+
+                '<p>COTE: 7.8</p>'+
+                '</div>'+
+                '</div>';
+          var contentString11 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 11</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>École Cardinal Roy</b></p>'+
+                '<p>COTE: 7.9</p>'+
+                '</div>'+
+                '</div>';
+          var contentString12 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 1</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Jean-de-Brébeuf</b></p>'+
+                '<p>COTE: 9.9</p>'+
+                '</div>'+
+                '</div>';
+          var contentString13 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 2</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Jean-Eudes</b></p>'+
+                '<p>COTE: 9.9</p>'+
+                '</div>'+
+                '</div>';
+          var contentString14 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 3</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Jean-de-la-Mennais</b></p>'+
+                '<p>COTE: 9.8</p>'+
+                '</div>'+
+                '</div>';
+          var contentString15 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 4</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Pensionnat Saint-Nom-de-Marie</b></p>'+
+                '<p>COTE: 9.6</p>'+
+                '</div>'+
+                '</div>';
+          var contentString16 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 5</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Saint-Joseph de Hull</b></p>'+
+                '<p>COTE: 9.5</p>'+
+                '</div>'+
+                '</div>';
+          var contentString17 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 6</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Saint-Sacrement</b></p>'+
+                '<p>COTE: 9.5</p>'+
+                '</div>'+
+                '</div>';
+          var contentString18 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 7</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>L\'École Ali Ibn Abi Talib</b></p>'+
+                '<p>COTE: 9.5</p>'+
+                '</div>'+
+                '</div>';
+          var contentString19 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 8</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Laval</b></p>'+
+                '<p>COTE: 9.4</p>'+
+                '</div>'+
+                '</div>';
+
+          var contentString20 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 9</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Saint-Alexandre de la Gatineau</b></p>'+
+                '<p>COTE: 9.4</p>'+
+                '</div>'+
+                '</div>';
+
+          var contentString21 = '<div id="content">'+
+                '<div id="siteNotice">'+
+                '</div>'+
+                '<h3 id="firstHeading" class="firstHeading">RANK 10</h3>'+
+                '<div id="bodyContent">'+
+                '<p><b>Collège Sainte-Marcelline</b></p>'+
+                '<p>COTE: 9.4</p>'+
+                '</div>'+
+                '</div>';
+
+
+          var infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+          var infowindow1 = new google.maps.InfoWindow({
+            content: contentString1
+          });
+          var infowindow2 = new google.maps.InfoWindow({
+            content: contentString2
+          });
+          var infowindow3 = new google.maps.InfoWindow({
+            content: contentString3
+          });
+          var infowindow4 = new google.maps.InfoWindow({
+            content: contentString4
+          });
+          var infowindow5 = new google.maps.InfoWindow({
+            content: contentString5
+          });
+          var infowindow6 = new google.maps.InfoWindow({
+            content: contentString6
+          });
+          var infowindow7 = new google.maps.InfoWindow({
+            content: contentString7
+          });
+          var infowindow8 = new google.maps.InfoWindow({
+            content: contentString8
+          });
+          var infowindow9 = new google.maps.InfoWindow({
+            content: contentString9
+          });
+          var infowindow10 = new google.maps.InfoWindow({
+            content: contentString10
+          });
+          var infowindow11 = new google.maps.InfoWindow({
+            content: contentString11
+          });
+          var infowindow12 = new google.maps.InfoWindow({
+            content: contentString12
+          });
+          var infowindow13 = new google.maps.InfoWindow({
+            content: contentString13
+          });
+          var infowindow14 = new google.maps.InfoWindow({
+            content: contentString14
+          });
+          var infowindow15 = new google.maps.InfoWindow({
+            content: contentString15
+          });
+          var infowindow16 = new google.maps.InfoWindow({
+            content: contentString16
+          });
+          var infowindow17 = new google.maps.InfoWindow({
+            content: contentString17
+          });
+          var infowindow18 = new google.maps.InfoWindow({
+            content: contentString18
+          });
+          var infowindow19 = new google.maps.InfoWindow({
+            content: contentString19
+          });
+          var infowindow20 = new google.maps.InfoWindow({
+            content: contentString20
+          });
+          var infowindow21 = new google.maps.InfoWindow({
+            content: contentString21
+          });
+
+
+
+          marker.addListener('click', function() {
+            infowindow.open(map, marker);
+          });
+          marker1.addListener('click', function() {
+            infowindow1.open(map, marker1);
+          });
+          marker2.addListener('click', function() {
+            infowindow2.open(map, marker2);
+          });
+          marker3.addListener('click', function() {
+            infowindow3.open(map, marker3);
+          });
+          marker4.addListener('click', function() {
+            infowindow4.open(map, marker4);
+          });
+          marker5.addListener('click', function() {
+            infowindow5.open(map, marker5);
+          });
+          marker6.addListener('click', function() {
+            infowindow6.open(map, marker6);
+          });
+          marker7.addListener('click', function() {
+            infowindow7.open(map, marker7);
+          });
+          marker8.addListener('click', function() {
+            infowindow8.open(map, marker8);
+          });
+          marker9.addListener('click', function() {
+            infowindow9.open(map, marker9);
+          });
+          marker10.addListener('click', function() {
+            infowindow10.open(map, marker10);
+          });
+          marker11.addListener('click', function() {
+            infowindow11.open(map, marker11);
+          });
+          marker12.addListener('click', function() {
+            infowindow12.open(map, marker12);
+          });
+          marker13.addListener('click', function() {
+            infowindow13.open(map, marker13);
+          });
+          marker14.addListener('click', function() {
+            infowindow14.open(map, marker14);
+          });
+          marker15.addListener('click', function() {
+            infowindow15.open(map, marker15);
+          });
+          marker16.addListener('click', function() {
+            infowindow16.open(map, marker16);
+          });
+          marker17.addListener('click', function() {
+            infowindow17.open(map, marker17);
+          });
+          marker18.addListener('click', function() {
+            infowindow18.open(map, marker18);
+          });
+          marker19.addListener('click', function() {
+            infowindow19.open(map, marker19);
+          });
+          marker20.addListener('click', function() {
+            infowindow20.open(map, marker20);
+          });
+          marker21.addListener('click', function() {
+            infowindow21.open(map, marker21);
+          });
+
+
+
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
