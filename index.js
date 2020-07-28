@@ -10,9 +10,18 @@ app.use(express.static(path.join(__dirname,'public')));
 app.set('views',path.join(__dirname,'views'));
 app.set('view engine', 'ejs');
 
+
 app.get('/', (req, res) =>{
   res.render('pages/index')
 });
+
+/*
+for(i=2; i<3; i++){
+  app.get('/day'+i.toString(), (req,res) =>{
+    res.render('pages/day'+ i.toString()+'/day'+ i.toString())
+  })
+};
+*/
 
 app.get('/day2', (req, res) =>{
   res.render('pages/day2/day2')
@@ -24,6 +33,14 @@ app.get('/day3', (req, res) =>{
 
 app.get('/day4', (req, res) =>{
   res.render('pages/day4/day4')
+});
+
+app.get('/day5', (req, res) =>{
+  res.render('pages/day5/day5')
+});
+
+app.get('/bigcanvas.js',(req, res) =>{
+    res.sendfile('views/pages/day5/bigcanvas.js');
 });
 
 app.get('/weather.js',(req, res) =>{
