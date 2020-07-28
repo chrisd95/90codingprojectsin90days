@@ -2,7 +2,7 @@
 
 Each day consists of a project which is uploaded to a heroku node.js server
 
-Link: https://www.christopherdip.com
+Link: http://www.christopherdip.com/
 
 I used p5.js and APIs such as googlemaps API, openweathermap API
 
