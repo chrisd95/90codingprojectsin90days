@@ -15,12 +15,11 @@ app.get('/', (req, res) =>{
   res.render('pages/index')
 });
 
-/*
-for(i=2; i<3; i++){
-  app.get('/day'+i.toString(), (req,res) =>{
-    res.render('pages/day'+ i.toString()+'/day'+ i.toString())
-  })
-};
+/* dynamic version is useful but not working completely
+app.get('/:day', (req , res) => {
+  const { day } = req.params
+  res.render(`pages/${day}/${day}.ejs`)
+})
 */
 
 app.get('/day2', (req, res) =>{

@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <p style="text-align:right"><a href="./">Homepage</a>
-    <h3 style=text-align:center;> Day 5 : Big Canvas </h3>
-    <hr/>
-    <script src="p5.min.js"></script>
-    <script src="hammer.min.js"></script>
-    <script src="bigcanvas.js"></script>
+  <meta charset="UTF-8">
+  <script src="p5.min.js"></script>
 
-  </head>
-  <body>
-    </body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-database.js"></script>
+
+  <script src="bigcanvas.js"></script>
+</head>
+
+<body>
+  <div id ="canvascontainer"></div>
+
+  <p>
+    <button id="saveButton">save</button>
+    <button id="clearButton">clear</button>
+  </p>
+
+  <p>
+    <ol id="drawinglist">
+
+    </ol>
+</body>
 </html>
